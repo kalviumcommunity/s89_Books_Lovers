@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
+const mongoose = require('mongoose'); // Ensure mongoose is imported
 
 // GET all users
 const getAllUsers = async (req, res) => {
@@ -77,4 +78,31 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { getAllUsers, getUserById, registerUser, loginUser };
+// PUT update user
+const updateUser = async (req, res) => {
+  try {
+    const { name, email } = req.body;
+    const userId = req.params.id;
+
+    // Convert userId to ObjectId using 'new'
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ message: 'Invalid user ID format' });
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      new mongoose.Types.ObjectId(userId),
+      { name, email },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedUser) return res.status(404).json({ message: 'User not found' });
+
+    res.json({ message: 'User updated successfully', user: updatedUser });
+  } catch (error) {
+    console.error('Error updating user:', error);
+    res.status(500).json({ message: 'Failed to update user', error });
+  }
+};
+
+
+module.exports = { getAllUsers, getUserById, registerUser, loginUser, updateUser };
