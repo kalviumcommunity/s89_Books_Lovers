@@ -1,0 +1,23 @@
+
+meta {
+  name: post books
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:5000/api/books
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Book Title",
+    "author": "Book Author",
+    "genre": "Genre of the Book",
+    "description": "A short description of the book.",
+    "postedBy": "{userId}"  // Replace with an actual user ID
+  }
+  
+}
