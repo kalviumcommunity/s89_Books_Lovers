@@ -16,3 +16,5 @@ router.put('/:id', updateUser); // PUT endpoint to update user
 
 module.exports = router;
 
+// This code defines the routes for user-related operations in an Express application.
+

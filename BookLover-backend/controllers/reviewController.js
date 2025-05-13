@@ -1,6 +1,7 @@
 const Review = require('../models/Review');
 
 // POST: Add a new review
+// This endpoint allows a user to add a review for a book
 const addReview = async (req, res) => {
   try {
     const { bookId, userId, rating, comment } = req.body;

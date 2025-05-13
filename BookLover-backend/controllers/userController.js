@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose'); // Ensure mongoose is imported
 
 // GET all users
+// This function retrieves all users from the database and sends them as a JSON response.
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.find();

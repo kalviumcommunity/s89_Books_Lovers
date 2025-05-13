@@ -9,6 +9,7 @@ const {
 } = require('../controllers/bookController');
 
 // POST new book
+// This endpoint allows a user to add a new book
 router.post('/', addBook); // New POST endpoint to add a book
 
 // GET routes

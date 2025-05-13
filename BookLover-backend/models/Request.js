@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 // Define the   Request schema
+// This schema defines the structure of the Request document in MongoDB
 const requestSchema = new mongoose.Schema({
   bookId: {
     type: mongoose.Schema.Types.ObjectId,

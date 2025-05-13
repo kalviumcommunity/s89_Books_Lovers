@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 // Define the Review schema
+// This schema defines the structure of the Review document in MongoDB
 const reviewSchema = new mongoose.Schema({
   bookId: {
     type: mongoose.Schema.Types.ObjectId,
