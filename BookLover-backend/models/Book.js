@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 // Define the   Book schema
+// This schema defines the structure of the Book document in MongoDB
 const bookSchema = new mongoose.Schema({
   title: String,
   author: String,

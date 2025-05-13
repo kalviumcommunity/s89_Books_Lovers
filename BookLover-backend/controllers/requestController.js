@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Request = require('../models/Request');
 
 // POST: Create a book request
+// This endpoint allows a user to request a book from another user
 const createRequest = async (req, res) => {
   try {
     console.log('Incoming data:', req.body);
