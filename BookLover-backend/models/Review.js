@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Define the Review schema
 const reviewSchema = new mongoose.Schema({
   bookId: {
     type: mongoose.Schema.Types.ObjectId,
