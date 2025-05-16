@@ -5,7 +5,9 @@ const {
   getBookById,
   getBooksByUser,
   searchBooks,
-  addBook
+  addBook,
+  deleteBook,
+  updateBook
 } = require('../controllers/bookController');
 
 // POST new book
@@ -16,6 +18,8 @@ router.post('/', addBook); // New POST endpoint to add a book
 router.get('/search/query', searchBooks); // Search for books
 router.get('/user/:userId', getBooksByUser); // Get books by user ID
 router.get('/:id', getBookById); // Get a book by its ID
-router.get('/', getAllBooks); // Get all books
+router.get('/', getAllBooks);
+router.delete("/:id",deleteBook) // Get all books
+router.patch("/:id",updateBook);
 
 module.exports = router;
