@@ -8,6 +8,8 @@ function App() {
 
   return (
     <>
+      <h1>Welcome to BookLover Main App</h1>
+      <p>If you want to login, go to <a href="/login">/login</a></p>
     </>
   )
 }
